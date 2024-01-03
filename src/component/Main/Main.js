@@ -11,7 +11,7 @@ function Main() {
                 <div className="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
                     {
                         users.map((users,index)=>{
-                            return <MainCard value={users} ind={index}/>
+                            return <MainCard key={index} value={users} ind={index}/>
                         })
                     }
                 </div>

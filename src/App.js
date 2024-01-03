@@ -10,10 +10,9 @@ import Signin from "./component/Logpage/Signin";
 export const flowDat = createContext();
 
 function App() {
-  const [users, setUsers] = useState([]);
   useEffect(() => { getData(setUsers) }, [])
-  console.log("users", users);
-  console.log(adminData);
+  const [users, setUsers] = useState([]);
+  console.log(users)
   return (
     <flowDat.Provider value={{users,setUsers,adminData}}>
       <Navbar/>
