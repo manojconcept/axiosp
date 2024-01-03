@@ -1,13 +1,17 @@
 function Navbar() {
     return (
+        <>
+            <nav style={{ position: "sticky", top: "0", zIndex: "9000" }} className="navbar navbar-dark bg-dark  justify-content-between">
+                <div className="container">
+                    <a href="" className="navbar-brand"><i class="bi bi-database"></i>  User Database</a>
+                    <form className="form-inline">
+                        <button className="btn btn-light my-2 my-sm-0" type="submit">Login</button>
+                    </form>
 
-        <nav className="navbar navbar-light bg-light justify-content-between">
-            <a href="" className="navbar-brand">Navbar</a>
-            <form className="form-inline">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </nav>
+                </div>
+            </nav>
+        </>
+
     )
 }
 
