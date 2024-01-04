@@ -14,9 +14,10 @@ function App() {
   const [isLog, setIslog] = useState(false);
   const navigate = useNavigate()
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    navigate("/signin");
+  console.log(!"false");
+
+  const handleLogin = (reDir) => {
+    navigate(`/${reDir}`);
     setIslog(!isLog);
   }
 

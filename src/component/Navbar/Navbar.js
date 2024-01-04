@@ -10,7 +10,7 @@ function Navbar() {
                     <Link to={"/"} className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
                     
                         {
-                            isLog ? <button onClick={handleLogin} className="btn btn-light my-2 my-sm-0" >Logout</button> : <button onClick={handleLogin} className="btn btn-light my-2 my-sm-0" >Login</button>
+                            isLog ? <button onClick={()=>handleLogin("")} className="btn btn-light my-2 my-sm-0" ><i class="bi bi-person-check-fill"></i> Logout</button> : <button onClick={()=>handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
                         }
                 
                 </div>
