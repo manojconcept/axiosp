@@ -25,7 +25,12 @@ function List() {
                                     <td>@{user.username}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>@mdo</td>
+                                    <td>
+                                        <tr>
+                                            <th>hello</th>
+                                            <th>hello</th>
+                                        </tr>
+                                    </td>
                                     <td>@mdo</td>
                                 </tr>
                                 )

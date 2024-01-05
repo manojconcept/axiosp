@@ -13,9 +13,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [isLog, setIslog] = useState(false);
   const navigate = useNavigate()
-
-  console.log(!"false");
-
+  
   const handleLogin = (reDir) => {
     navigate(`/${reDir}`);
     setIslog(!isLog);
@@ -29,7 +27,6 @@ function App() {
     setIslog,
     handleLogin
   }
-
   console.log(users)
   return (
     <flowDat.Provider value={dataFall}>
