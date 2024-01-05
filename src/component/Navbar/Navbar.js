@@ -2,9 +2,10 @@ import { GobalContext } from "../../config/Utils";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-    const { isLog, handleLogin } = GobalContext();
+    const { isLog, handleLogin,setIslog } = GobalContext();
     const handleClear = () => {
         sessionStorage.clear()
+        setIslog(false);
     }
     const sessionFlag = sessionStorage.getItem('auth') !== null ? true : false;
     console.log(sessionFlag);
@@ -14,12 +15,12 @@ function Navbar() {
                 <div className="container">
                     <Link to={"/"} onClick={handleClear} className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
                     {
-                        sessionFlag ? <div  className="navbar-brand"><i class="bi bi-person-gear"></i>{}</div> : ""
+                        sessionFlag ? <div className="navbar-brand"><i class="bi bi-person-gear"></i> {`Hello ${JSON.parse(sessionStorage.getItem("auth")).username}`}</div> : ""
 
                     }
 
                     {
-                        isLog ? <button onClick={() => handleLogin("")} className="btn btn-light my-2 my-sm-0" ><i className="bi bi-person-check-fill"></i> Signup</button> : <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
+                        isLog ? <button onClick={() => handleLogin("signup")} className="btn btn-light my-2 my-sm-0" ><i className="bi bi-person-check-fill"></i> Signup</button> : <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
                     }
 
                 </div>

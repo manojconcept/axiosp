@@ -6,6 +6,7 @@ import Main from "./component/Main/Main";
 import { createContext } from "react";
 import Navbar from "./component/Navbar/Navbar"
 import Signin from "./component/Logpage/Signin";
+import Signup from "./component/Logpage/Signup";
 import List from "./component/Userlist/List";
 export const flowDat = createContext();
 function App() {
@@ -13,7 +14,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [isLog, setIslog] = useState(false);
   const navigate = useNavigate()
-  
+
   const handleLogin = (reDir) => {
     navigate(`/${reDir}`);
     setIslog(!isLog);
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<List />} />
       </Routes>
     </flowDat.Provider>
