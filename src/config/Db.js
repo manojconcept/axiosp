@@ -1,7 +1,7 @@
 export const adminData = [
     {
-        username:"admin",
-        password: "admin",
+        username:"manojconcept",
+        password: "1234",
     }
 ]
    
