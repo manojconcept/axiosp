@@ -47,14 +47,14 @@ function Signin() {
                             <form onSubmit={formik.handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputUsername">@Username</label>
-                                    <input type="text" className="form-control" id="username" name="username" value={formik.values.username} onChange={formik.handleChange} onBlur={formik.handleBlur} aria-describedby="usernameHelp" placeholder="Enter Username" />
+                                    <input type="text" className="form-control" id="username" name="username" value={formik.values.username} onChange={formik.handleChange} onBlur={formik.handleBlur} aria-describedby="usernameHelp" placeholder="Enter Username" required/>
                                     <small id="usernameHelp" className="form-text text-muted mx-2">{
                                         formik.errors.username && formik.touched.username ? formik.errors.username : "username : manojconcept"
                                     }</small>
                                 </div>
                                 <div className="form-group mt-2">
                                     <label htmlFor="exampleInputPassword1">Password</label>
-                                    <input type="password" className="form-control" id="password" name="password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} placeholder="Password" aria-describedby="passwordHelp" />
+                                    <input type="password" className="form-control" id="password" name="password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} placeholder="Password" aria-describedby="passwordHelp" required />
                                     <small id="paswordHelp" className="form-text text-muted mx-2">
                                         {
                                             formik.errors.password && formik.touched.errors ? formik.errors.password : "password: 1234"
