@@ -21,7 +21,6 @@ function App() {
     navigate(`/${reDir}`);
     setIslog(!isLog);
   }
-  console.log("http://www.example.com");
   const dataFall = { 
     users, 
     setUsers, 
@@ -44,4 +43,5 @@ function App() {
     </flowDat.Provider>
   )
 }
+console.log(`Hey checkout My Repo :${"https://github.com/manojconcept/user-ga-db"}`);
 export default App;
