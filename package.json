@@ -1,5 +1,5 @@
 {
-  "name": "axiosp",
+  "name": "user-ga-db",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "```js npm install  npm start",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojconcept/user-ga-db.git"
+  },
+  "keywords": [
+    "crud"
+  ],
+  "author": "manojconcept",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manojconcept/user-ga-db/issues"
+  },
+  "homepage": "https://github.com/manojconcept/user-ga-db#readme"
 }
