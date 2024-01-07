@@ -8,7 +8,6 @@ function Navbar() {
         setIslog(false);
     }
     const sessionFlag = sessionStorage.getItem('auth') !== null ? true : false;
-    console.log(sessionFlag);
     return (
         <>
             <nav style={{ position: "sticky", top: "0", zIndex: "9000" }} className="navbar navbar-dark bg-dark  justify-content-between">

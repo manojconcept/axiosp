@@ -16,12 +16,10 @@ function Signup() {
         },
         validationSchema: signUpSchema,
         onSubmit: (values) => {
-            console.log(values);
             setSingupVal(values);
         }
     }
     const formik = useFormik(loginForm)
-    console.log(formik);
     return (
         <div className="container mt-5">
             <div className="row d-flex justify-content-center">

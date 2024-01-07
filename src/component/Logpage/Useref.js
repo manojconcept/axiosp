@@ -3,12 +3,12 @@ import { useRef } from "react";
 
 function Useref(){
     const inputRef = useRef();
-    console.log(inputRef);        
+    // console.log(inputRef);        
     const handleSubmit = () =>{
-        console.log(inputRef.current.value);
+        // console.log(inputRef.current.value);
     }
     const handleChange = () =>{
-        console.log(inputRef.current.value);
+        // console.log(inputRef.current.value);
     }
     return(
         <>

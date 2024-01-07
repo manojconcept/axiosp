@@ -19,9 +19,6 @@ function Signin() {
         validationSchema: signInSchema,
         onSubmit: (values) => {
             const [obj1, obj2] = [values, adminData[0]]
-            console.log("values", obj1);
-            console.log("adminDat", obj2)
-            console.log("isAuthEqual", isAuthEqual(obj1, obj2));
             if (isAuthEqual(obj1, obj2) === true) {
                 sessionStorage.setItem("auth", JSON.stringify(values))
                 const getSessionDat = JSON.parse(sessionStorage.getItem("auth"))

@@ -14,13 +14,11 @@ function Fsignin() {
             password:""
         },
         onSubmit:(values)=>{
-            console.log(values);
 
         },
         validationSchema: signInSchema,
     }
     const formik= useFormik(signInForm)
-    console.log(formik);
     return (
         <div className="container">
             <div className="row">

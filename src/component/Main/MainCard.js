@@ -1,5 +1,4 @@
 function MainCard({ value, ind }) {
-    console.log(value);
     return (
         <div key={ind} className="card m-1" style={{ width: "30rem" }}>
             <div className="card-body">

@@ -21,7 +21,7 @@ function App() {
     navigate(`/${reDir}`);
     setIslog(!isLog);
   }
-
+  console.log("http://www.example.com");
   const dataFall = { 
     users, 
     setUsers, 
@@ -30,7 +30,6 @@ function App() {
     setIslog,
     handleLogin
   }
-  console.log(users)
   return (
     <flowDat.Provider value={dataFall}>
       <Navbar />

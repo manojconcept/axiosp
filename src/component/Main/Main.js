@@ -3,7 +3,6 @@ import MainCard from "./MainCard";
 
 function Main() {
     const { users, setUsers, adminData } = GobalContext();
-    console.log(users);
     return (
         <section className="py-7">
             <div className="container px-4 px-lg-5 mt-5">
