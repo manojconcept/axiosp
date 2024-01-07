@@ -1,4 +1,13 @@
-/* .hoverSite:hover{
-    background-color: red;
-    opacity: 0.5;
-} */
+tr:hover {
+    background-color: #acf4cf !important;
+    opacity: 1;
+}
+
+td,
+th {
+    background-color: none !important;
+}
+
+.table> :not(caption)>*>* {
+    background: none !important;
+}
