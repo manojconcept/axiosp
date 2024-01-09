@@ -8,9 +8,11 @@ import Navbar from "./component/Navbar/Navbar"
 import Signin from "./component/Logpage/Signin";
 import Signup from "./component/Logpage/Signup";
 import List from "./component/Userlist/List";
+
 export const flowDat = createContext();
+
 function App() {
-  useEffect(() => { getData(setUsers) }, [])
+  useEffect(() => { getData(setUsers) }, []);
   const [users, setUsers] = useState([]);
   const [isLog, setIslog] = useState(false);
   const navigate = useNavigate()
