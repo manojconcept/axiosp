@@ -76,23 +76,23 @@ function List() {
                                                             <div>
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
                                                                     <div id="emailHelp" class="form-text">Street</div>
-                                                                    <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.street} />
+                                                                    <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adstreet} />
                                                                     <div id="emailHelp" class="form-text">Suite</div>
-                                                                    <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.suite} />
+                                                                    <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adsuite} />
                                                                 </div>
                                                                 <hr />
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
                                                                     <div id="emailHelp" class="form-text">City</div>
-                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.city} />
+                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.adcity} />
                                                                     <div id="emailHelp" class="form-text">Zipcode</div>
-                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.zipcode} />
+                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.adzipcode} />
                                                                 </div>
                                                                 <hr />
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
                                                                     <div id="emailHelp" class="form-text">lat</div>
-                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.geo.lat} />
+                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.geolat} />
                                                                     <div id="emailHelp" class="form-text">lgn</div>
-                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.address.geo.lng} />
+                                                                    <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.geolng} />
                                                                 </div>
                                                                 <hr />
                                                                 <div id="emailHelp" class="form-text">phone</div>
@@ -105,13 +105,13 @@ function List() {
                                                         <td>
 
                                                             <div id="emailHelp" class="form-text">Company Name</div>
-                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.company.name} />
+                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.comname} />
                                                             <hr />
                                                             <div id="emailHelp" class="form-text">Catch Phrase</div>
-                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.company.catchPhrase} />
+                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.comcatchPhrase} />
                                                             <hr />
                                                             <div id="emailHelp" class="form-text">Business Slogan</div>
-                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="email" value={user.company.bs} />
+                                                            <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="email" value={user.comBs} />
                                                         </td>
 
                                                     </>
@@ -129,20 +129,20 @@ function List() {
                                                         <td>
                                                             <p>
                                                                 <small>
-                                                                    {`Street : ${user.address.street}, Suite : ${user.address.suite}`}
+                                                                    {`Street : ${user.adstreet}, Suite : ${user.adsuite}`}
                                                                 </small>
                                                             </p>
                                                             <hr />
 
                                                             <p>
                                                                 <small>
-                                                                    {`City : ${user.address.city}, ZipCode : ${user.address.zipcode}`}
+                                                                    {`City : ${user.adcity}, ZipCode : ${user.adzipcode}`}
                                                                 </small>
                                                             </p>
                                                             <hr />
                                                             <p>
                                                                 <small>
-                                                                    {`Geo - lat : ${user.address.geo.lat},lng : ${user.address.geo.lng}`}
+                                                                    {`Geo - lat : ${user.geolat},lng : ${user.geolng}`}
                                                                 </small>
                                                             </p>
                                                             <hr />
@@ -155,20 +155,20 @@ function List() {
                                                         <td>
                                                             <p>
                                                                 <small>
-                                                                    {` company Name : ${user.company.name}`}
+                                                                    {` company Name : ${user.comname}`}
                                                                 </small>
                                                             </p>
                                                             <hr />
                                                             <p>
                                                                 <small>
-                                                                    {` Catch Phrase : ${user.company.catchPhrase}`}
+                                                                    {` Catch Phrase : ${user.comcatchPhrase}`}
                                                                 </small>
 
                                                             </p>
                                                             <hr />
                                                             <p>
                                                                 <small>
-                                                                    {` Business Slogan : ${user.company.bs}`}
+                                                                    {` Business Slogan : ${user.comBs}`}
                                                                 </small>
 
                                                             </p>

@@ -1,0 +1,17 @@
+{
+    "name": "name 1",
+    "username": "username 1",
+    "email": "email 1",
+    "adstreet": "adstreet 1",
+    "adsuite": "adsuite 1",
+    "adcity": "adcity 1",
+    "adzipcode": "adzipcode 1",
+    "geolat": 35,
+    "geolng": 100,
+    "phone": 52,
+    "website": "website 1",
+    "comname": "comname 1",
+    "comcatchPhrase": "comcatchPhrase 1",
+    "comBs": "comBs 1",
+    "id": "1"
+  }

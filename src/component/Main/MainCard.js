@@ -16,14 +16,14 @@ function MainCard({ value, ind }) {
                 <hr />
                 <div className="d-flex">
                     <div>
-                        <h6 className="card-subtitle mb-2 text-muted"><i className="bi bi-building-fill"></i> <span>{value.company.name}</span></h6>
-                        <h6 className="card-subtitle mb-2 text-muted">{`${value.company.catchPhrase}`}</h6>
-                        <h6 className="card-subtitle mb-2 text-muted">{`"${value.company.bs}"`}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted"><i className="bi bi-building-fill"></i> <span>{value.comname}</span></h6>
+                        <h6 className="card-subtitle mb-2 text-muted">{`${value.comcatchPhrase}`}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted">{`"${value.comBs}"`}</h6>
                     </div>
                     <div style={{ marginLeft: "10px",padding:"10px" }} className="card">
-                        <h6 className="card-subtitle mb-2 text-muted"><i className="bi bi-house-door"></i> <span>{value.address.street}</span></h6>
-                        <h6 className="card-subtitle mb-2 text-muted">{`${value.address.suite}, ${value.address.city}`}</h6>
-                        <h6 className="card-subtitle mb-2 text-muted">{value.address.zipcode}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted"><i className="bi bi-house-door"></i> <span>{value.adstreet}</span></h6>
+                        <h6 className="card-subtitle mb-2 text-muted">{`${value.adsuite}, ${value.adcity}`}</h6>
+                        <h6 className="card-subtitle mb-2 text-muted">{value.adzipcode}</h6>
 
                     </div>
                 </div>
