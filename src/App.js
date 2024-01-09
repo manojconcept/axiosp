@@ -8,8 +8,6 @@ import Navbar from "./component/Navbar/Navbar"
 import Signin from "./component/Logpage/Signin";
 import Signup from "./component/Logpage/Signup";
 import List from "./component/Userlist/List";
-import Fsignin from "./component/Logpage/Fsignin";
-import Useref from "./component/Logpage/Useref";
 export const flowDat = createContext();
 function App() {
   useEffect(() => { getData(setUsers) }, [])
@@ -37,8 +35,6 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<List />} />
-        <Route path="/fsignin" element={<Fsignin/>} />
-        <Route path="/useref" element={<Useref/>} />
       </Routes>
     </flowDat.Provider>
   )

@@ -185,7 +185,7 @@ function List() {
                                                 <button onClick={() => { handDel(user.id) }} className="btn btn-danger mt-2"><i className="bi bi-x-lg"></i></button>
                                             </div>
                                             <div style={{marginLeft:"8px"}}>
-                                                <button onClick={() => { handDel(user.id) }} className="btn btn-warning mt-2"><i class="bi bi-person-gear"></i></button>
+                                                <button onClick={() => { handDel(user.id) }} className="btn btn-warning mt-2"><i className="bi bi-person-gear"></i></button>
                                             </div>
 
                                             </div>
