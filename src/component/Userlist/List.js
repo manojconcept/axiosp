@@ -12,21 +12,21 @@ function List() {
         name: "",
         username: "",
         email: "",
-        address: {
-            street: "",
-            suite: "",
-            city: "",
-            zipcode: "",
-            geo: {
-                lat: "",
-                lng: ""
-            }
-        }
+        adstreet: "",
+        adsuite: "",
+        adcity: "",
+        adzipcode: "",
+        geolat: "",
+        geolng: " ",
+        phone: "",
+        website: "",
+        comname: "",
+        comcatchPhrase: "",
+        comBs: "",
+
     }
     const { users, setUsers } = GobalContext()
-    // const [input, setInput] = useState(false);
     const [editRow, setEditRow] = useState(0);
-
     const handEdit = (id) => {
         // setInput(preData => !preData);
         setEditRow(id);
@@ -59,7 +59,6 @@ function List() {
                             {
                                 users.map((user, index) => {
                                     return (
-
                                         <tr className="hoverSite" key={index}>
                                             {
                                                 editRow === user.id ?
@@ -115,8 +114,12 @@ function List() {
                                                         </td>
 
                                                     </>
+
+
+
                                                     :
                                                     <>
+
                                                         <th scope="row">{user.id}</th>
                                                         <td>@{user.username}</td>
                                                         <td>
@@ -176,20 +179,20 @@ function List() {
                                                     </>
 
                                             }
-                                            <div style={{flexDirection:"row"}}>
-                                            <div>
-                                                <button onClick={() => { handEdit(user.id) }} className="mx-2 btn btn-dark "><i className="bi bi-pencil"></i></button>
+                                            <div style={{ flexDirection: "row" }}>
+                                                <div>
+                                                    <button onClick={() => { handEdit(user.id) }} className="mx-2 btn btn-dark "><i className="bi bi-pencil"></i></button>
+
+                                                </div>
+                                                <div style={{ marginLeft: "8px" }}>
+                                                    <button onClick={() => { handDel(user.id) }} className="btn btn-danger mt-2"><i className="bi bi-x-lg"></i></button>
+                                                </div>
+                                                <div style={{ marginLeft: "8px" }}>
+                                                    <button onClick={() => { handDel(user.id) }} className="btn btn-warning mt-2"><i className="bi bi-person-gear"></i></button>
+                                                </div>
 
                                             </div>
-                                            <div style={{marginLeft:"8px"}}>
-                                                <button onClick={() => { handDel(user.id) }} className="btn btn-danger mt-2"><i className="bi bi-x-lg"></i></button>
-                                            </div>
-                                            <div style={{marginLeft:"8px"}}>
-                                                <button onClick={() => { handDel(user.id) }} className="btn btn-warning mt-2"><i className="bi bi-person-gear"></i></button>
-                                            </div>
 
-                                            </div>
-                            
                                         </tr>
 
 

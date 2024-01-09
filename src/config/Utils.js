@@ -5,8 +5,8 @@ import { adminData } from "./Db";
 
 const flowDat = createContext();
 export const UsersWrapperList = ({ children }) => {
-    useEffect(() => { getData(setUsers) }, []);
     const [users, setUsers] = useState([]);
+    useEffect(() => { getData(setUsers) }, []);
     const [isLog, setIslog] = useState(+false);
     const navigate = useNavigate()
     const handleLogin = (reDir) => {
