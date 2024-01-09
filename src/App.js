@@ -1,37 +1,13 @@
-import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { getData } from "./config/Api";
-import { adminData } from "./config/Db"
+import { Routes, Route } from "react-router-dom";
 import Main from "./component/Main/Main";
-import { createContext } from "react";
 import Navbar from "./component/Navbar/Navbar"
 import Signin from "./component/Logpage/Signin";
 import Signup from "./component/Logpage/Signup";
 import List from "./component/Userlist/List";
-
-export const flowDat = createContext();
-
+import { UsersWrapperList } from "./config/Utils";
 function App() {
-  useEffect(() => { getData(setUsers) }, []);
-  const [users, setUsers] = useState([]);
-  const [isLog, setIslog] = useState(false);
-  const navigate = useNavigate()
-  const handleLogin = (reDir) => {
-    navigate(`/${reDir}`);
-    setIslog(!isLog);
-  }
-
-  
-  const dataFall = { 
-    users, 
-    setUsers, 
-    adminData, 
-    isLog, 
-    setIslog,
-    handleLogin
-  }
   return (
-    <flowDat.Provider value={dataFall}>
+    <UsersWrapperList>
       <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -39,7 +15,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<List />} />
       </Routes>
-    </flowDat.Provider>
+    </UsersWrapperList>
   )
 }
 console.log(`Hey checkout My Repo :${"https://github.com/manojconcept/user-ga-db"}`);

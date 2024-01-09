@@ -40,7 +40,7 @@ function List() {
     // console.log(users);
     return (
         <>
-            <div className="container=fluid mt-2 mx-2">
+            <div className="container-fluid mt-2 mx-2">
                 <div className="card p-2">
 
                     <table className="table table-striped mt-2">
@@ -75,42 +75,42 @@ function List() {
                                                         <td>
                                                             <div>
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
-                                                                    <div id="emailHelp" class="form-text">Street</div>
+                                                                    <div id="emailHelp" className="form-text">Street</div>
                                                                     <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adstreet} />
-                                                                    <div id="emailHelp" class="form-text">Suite</div>
+                                                                    <div id="emailHelp" className="form-text">Suite</div>
                                                                     <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adsuite} />
                                                                 </div>
                                                                 <hr />
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
-                                                                    <div id="emailHelp" class="form-text">City</div>
+                                                                    <div id="emailHelp" className="form-text">City</div>
                                                                     <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.adcity} />
-                                                                    <div id="emailHelp" class="form-text">Zipcode</div>
+                                                                    <div id="emailHelp" className="form-text">Zipcode</div>
                                                                     <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.adzipcode} />
                                                                 </div>
                                                                 <hr />
                                                                 <div className="d-flex justify-content-center align-items-center mb-2">
-                                                                    <div id="emailHelp" class="form-text">lat</div>
+                                                                    <div id="emailHelp" className="form-text">lat</div>
                                                                     <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.geolat} />
-                                                                    <div id="emailHelp" class="form-text">lgn</div>
+                                                                    <div id="emailHelp" className="form-text">lgn</div>
                                                                     <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="text" value={user.geolng} />
                                                                 </div>
                                                                 <hr />
-                                                                <div id="emailHelp" class="form-text">phone</div>
+                                                                <div id="emailHelp" className="form-text">phone</div>
                                                                 <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2" type="text" value={user.phone} />
-                                                                <div id="emailHelp" class="form-text">website</div>
+                                                                <div id="emailHelp" className="form-text">website</div>
                                                                 <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control" type="text" value={user.website} />
                                                             </div>
                                                         </td>
 
                                                         <td>
 
-                                                            <div id="emailHelp" class="form-text">Company Name</div>
+                                                            <div id="emailHelp" className="form-text">Company Name</div>
                                                             <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.comname} />
                                                             <hr />
-                                                            <div id="emailHelp" class="form-text">Catch Phrase</div>
+                                                            <div id="emailHelp" className="form-text">Catch Phrase</div>
                                                             <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.comcatchPhrase} />
                                                             <hr />
-                                                            <div id="emailHelp" class="form-text">Business Slogan</div>
+                                                            <div id="emailHelp" className="form-text">Business Slogan</div>
                                                             <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control p-2" type="email" value={user.comBs} />
                                                         </td>
 
