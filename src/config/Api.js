@@ -1,7 +1,7 @@
 import axios from "axios";
-const userRecords = "659d82d7633f9aee79098e60";
+import {adminUserControlKey} from "./Db"
 const endpoint = "users-records";
-export const api = `https://${userRecords}.mockapi.io/api/v1/`
+export const api = `https://${adminUserControlKey}.mockapi.io/api/v1/`
 export const getData = async (setUsers) =>{
     const response = await axios.get(`${api}/${endpoint}`);
     setUsers(response.data)
