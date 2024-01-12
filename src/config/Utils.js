@@ -9,7 +9,7 @@ export const GobalContext = () => {
 }
 export const UsersWrapperList = ({ children }) => {
 
-    const [users, setUsers] = useState([]);// 
+    const [users, setUsers] = useState([]);
     useEffect(() => { getData(setUsers) }, []); 
     const [isLog, setIslog] = useState(false);
     const navigate = useNavigate()

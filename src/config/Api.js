@@ -23,11 +23,24 @@ export const getDataId = async (id) => {
     }
 }
 
-export const getPost = async () =>{
+ 
+
+export const getUpdate = async (id) =>{
     try{
+        const response = await axios.post(`${api}/${endpoint}/${id}`)
+        console.log(response.data)
 
     }catch(error){
-        console.error("Error Fetching Data")
+        console.error("Error Fetching Data in getUpdate");
+    }
+}
+
+export const getPostNew = async() => {
+    try{
+        const response = await axios.post(`${api}/${endpoint}`)
+        console.log(response.data)
+    }catch(error){
+        console.error("Error Fetching on data post")
     }
 }
 
