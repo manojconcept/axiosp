@@ -4,10 +4,10 @@ import "./list.css";
 import { useFormik } from "formik";
 import * as yup from "yup"
 
-
-
 function List() {
     const { users, setUsers } = GobalContext()
+
+
     const [editRow, setEditRow] = useState(0);
     const userRecord = {
         name: "",
@@ -26,29 +26,42 @@ function List() {
         comBs: "",
 
     }
-    const userForm = {
-        initialValues : userRecord,
-        validationSchema : "",
-        onSubmit: (value) =>{
-            console.log(value);
-        }
 
+
+    const userForm = {
+        initialValues: userRecord,
+        // validationSchema: yup.objects({
+        // }),
+        onSubmit: (value) => {
+            // console.log(value);
+            if (editRow) {
+                //update
+                const updatedUsers = [...users];
+                updatedUsers[editRow - 1] = value;
+                setUsers(updatedUsers);
+                setEditRow(0);
+            } else {
+                //create
+                setUsers([...users, value]);
+            }
+        }
     }
 
     const formik = useFormik(userForm);
 
 
     const handEdit = (id) => {
-        // setInput(preData => !preData);
         setEditRow(id);
-        // console.log("edit", editRow);
-    }
+        formik.setValues(users[id - 1]);
+    };
 
     const handDel = (id) => {
         // console.log("Del")
         // console.log(id);
     }
     // console.log(users);
+
+    
     return (
         <>
             <div className="container-fluid mt-2 mx-2">
@@ -76,9 +89,28 @@ function List() {
                                                         <>
                                                             <th scope="row">{user.id}</th>
                                                             <td style={{ fontSize: "15px", height: "20px", margin: "2px" }} className=" mb-2 p-2">@{user.username}</td>
+
+
                                                             <td>
                                                                 <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="text" id="" name="" onChange="" value={user.name} />
                                                             </td>
+
+
+
+                                                            {/*
+                                                            <input
+    style={{ fontSize: "13px", height: "20px", margin: "2px" }}
+    className="form-control mb-2 p-2"
+    type="text"
+    id="" 
+    name=""  
+    onChange={formik.handleChange}
+    value={formik.values.name}
+
+    //window.location.reload()
+/> 
+                                                             */}
+
                                                             <td>
                                                                 <input style={{ fontSize: "13px", height: "20px", margin: "2px" }} className="form-control mb-2 p-2" type="email" value={user.email} />
                                                             </td>
@@ -88,7 +120,7 @@ function List() {
                                                                         <div id="emailHelp" className="form-text">Street</div>
                                                                         <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adstreet} />
                                                                         <div id="emailHelp" className="form-text">Suite</div>
-                                                                        <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adsuite} />
+                                                                        <input  style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" value={user.adsuite} />
                                                                     </div>
                                                                     <hr />
                                                                     <div className="d-flex justify-content-center align-items-center mb-2">
@@ -129,8 +161,9 @@ function List() {
 
 
                                                         :
-                                                        <>
 
+
+                                                        <>
                                                             <th scope="row">{user.id}</th>
                                                             <td>@{user.username}</td>
                                                             <td>
@@ -138,7 +171,6 @@ function List() {
                                                             </td>
                                                             <td>
                                                                 {user.email}
-
                                                             </td>
                                                             <td>
                                                                 <p>

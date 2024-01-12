@@ -4,14 +4,14 @@ import { getData } from "./Api";
 import { adminData } from "./Db";
 
 const flowDat = createContext();
-
+export const GobalContext = () => {
+    return useContext(flowDat);
+}
 export const UsersWrapperList = ({ children }) => {
 
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => { getData(setUsers) }, []);
-    const [isLog, setIslog] = useState(+false);
-
+    const [users, setUsers] = useState([]);// 
+    useEffect(() => { getData(setUsers) }, []); 
+    const [isLog, setIslog] = useState(false);
     const navigate = useNavigate()
     const handleLogin = (reDir) => {
         navigate(`/${reDir}`);
@@ -32,6 +32,3 @@ export const UsersWrapperList = ({ children }) => {
     )
 }
 
-export const GobalContext = () => {
-    return useContext(flowDat);
-}
