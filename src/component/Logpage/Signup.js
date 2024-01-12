@@ -4,6 +4,7 @@ import * as yup from "yup"
 import { GobalContext } from "../../config/Utils";
 
 function Signup() {
+    const {setUsers} = GobalContext()
 
     const signUpSchema = yup.object({
         username: yup.string().min(5, "Need a longer username").required("Please Type the Username"),
@@ -18,8 +19,19 @@ function Signup() {
         },
         validationSchema: signUpSchema,
         onSubmit: (values) => {
-            console.log(values)
+            const passwordMatch = values.password === values.confirmpassword
+            if(passwordMatch){
+                setInUsers({
+                    username : values.username,
+                    password : values.password
+                })
+            }
+           
         }
+    }
+    const setInUsers = (data)=>{
+        console.log(data);
+
     }
     const formik = useFormik(loginForm)
     return (

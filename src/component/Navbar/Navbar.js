@@ -19,9 +19,10 @@ function Navbar() {
                     }
 
                     <div className="d-flex">
-                        {
+                    <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
+                        {/* {
                             isLog ? <button onClick={() => handleLogin("signup")} className="btn btn-light my-2 my-sm-0" ><i className="bi bi-person-plus-fill"></i> Signup</button> : <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
-                        }
+                        } */}
                         {
                             sessionFlag ? <Link to={"/"} onClick={handleClear} className="mx-2 btn btn-danger my-2 my-sm-0">Log out</Link>:""
 
