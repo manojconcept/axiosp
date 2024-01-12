@@ -1,13 +1,14 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import * as yup from "yup"
+import { GobalContext } from "../../config/Utils";
+
 function Signup() {
-    const [singupVal, setSingupVal] = useState();
 
     const signUpSchema = yup.object({
         username: yup.string().min(5, "Need a longer username").required("Please Type the Username"),
-        password: yup.string().min(5, "Type the range").max(5, "type the range").required("Please type the password"),
-        confirmpassword: yup.string().min(5, "Type the range").max(5, "type the range").required("Please type the password")
+        password: yup.string().min(5, "Type the range").required("Please type the password"),
+        confirmpassword: yup.string().min(5, "Type the range").required("Please type the password")
     })
     const loginForm = {
         initialValues: {
@@ -17,7 +18,7 @@ function Signup() {
         },
         validationSchema: signUpSchema,
         onSubmit: (values) => {
-            console.log(values);
+            console.log(values)
         }
     }
     const formik = useFormik(loginForm)
@@ -26,11 +27,10 @@ function Signup() {
             <div className="row d-flex justify-content-center">
                 <div className="col-4">
                     <div style={{ boxShadow: "10px 10px 5px gray " }} className="card p-3">
-
                         <form onSubmit={formik.handleSubmit}>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputUsername" className="form-label">Email address</label>
-                                <input value={formik.values.username} onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" className="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Email" />
+                                <input value={formik.values.username} onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" className="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="username" />
                                 {formik.errors.username && formik.touched.username && (
                                     <span>{formik.errors.username}</span>
                                 )}
@@ -45,12 +45,26 @@ function Signup() {
                                 )}
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputConfirmPassword" className="form-label">confirm Password</label>
-                                <input id="confirmpassword" name="confirmpassword" value={formik.values.confirmpassword} onBlur={formik.handleBlur} onChange={formik.handleChange} type="password" className="form-control" placeholder="confirm password" />
+                                <label htmlFor="exampleInputConfirmPassword" className="form-label">Confirm Password</label>
+                                <input
+                                    id="confirmpassword"
+                                    name="confirmpassword"
+                                    value={formik.values.confirmpassword}
+                                    onBlur={formik.handleBlur}
+                                    onChange={formik.handleChange}
+                                    type="password"
+                                    className={`form-control ${formik.errors.confirmpassword && formik.touched.confirmpassword ? 'is-invalid' : ''}`}
+                                    placeholder="Confirm password"
+                                />
                                 {formik.errors.confirmpassword && formik.touched.confirmpassword && (
-                                    <small id="passwordhelp" className="form-text text-muted">
+                                    <div className="invalid-feedback">
                                         {formik.errors.confirmpassword}
-                                    </small>
+                                    </div>
+                                )}
+                                {formik.values.password === formik.values.confirmpassword ? (
+                                    <small className="form-text text-success">Passwords match</small>
+                                ) : (
+                                    <small className="form-text text-danger">Passwords don't match</small>
                                 )}
                             </div>
                             <div className="d-flex justify-content-end">
@@ -59,6 +73,7 @@ function Signup() {
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     )

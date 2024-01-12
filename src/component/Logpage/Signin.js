@@ -10,6 +10,7 @@ const signInSchema = yup.object({
 function Signin() {
     const { adminData } = GobalContext();
     const navigator = useNavigate();
+
     const formik = useFormik({
         initialValues: {
             username: "",
@@ -38,7 +39,7 @@ function Signin() {
             <div className="container mt-2">
                 <div className="row justify-content-center">
                     <div className="col-5">
-                        <div style={{ boxShadow: "10px 10px 5px gray " }}  className="card p-4 mt-5">
+                        <div style={{ boxShadow: "10px 10px 5px gray " }}  className="card p-4 mt-5"s>
                             <form onSubmit={formik.handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputUsername">@Username</label>
