@@ -23,32 +23,35 @@ export const getDataId = async (id) => {
     }
 }
 
- 
-
-export const getUpdate = async (id) =>{
-    try{
-        const response = await axios.post(`${api}/${endpoint}/${id}`)
+export const getUpdate = async (id, user) => {
+    try {
+        const response = await axios.put(`${api}/${endpoint}/${id}`, user)
         console.log(response.data)
-
-    }catch(error){
+        if (response.status === 200) {
+            window.location.reload(false);
+        }
+    } catch (error) {
         console.error("Error Fetching Data in getUpdate");
     }
 }
 
-export const getPostNew = async() => {
-    try{
+export const getPost = async () => {
+    try {
         const response = await axios.post(`${api}/${endpoint}`)
         console.log(response.data)
-    }catch(error){
+    } catch (error) {
         console.error("Error Fetching on data post")
     }
 }
 
-export const getDeletId = async(id)=>{
-    try{
+export const getDelete = async (id) => {
+    try {
         const response = await axios.delete(`${api}/${endpoint}/${id}`)
         console.log(response);
-    }catch(error){
+        if (response.status === 200) {
+            window.location.reload(false);
+        }
+    } catch (error) {
         console.error("Error Fetching Data");
     }
 }

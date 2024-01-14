@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { GobalContext } from "../../config/Utils";
+import { getUpdate,getDelete } from "../../config/Api";
 import "./list.css";
 function List() {
     const { users, setUsers } = GobalContext()
     const [editRow, setEditRow] = useState(0);
+
     console.log(users);
+
     const userRecord = {
         name: "",
         username: "",
@@ -22,7 +25,7 @@ function List() {
         comBs: "",
 
     }
-    
+
     const handleChange = (e, id) => {
         const { name, value } = e.target;
         console.log(id);
@@ -39,6 +42,15 @@ function List() {
 
     const handDel = (id) => {
         console.log(id);
+        const delUp = users.find(user=>user.id===id);
+        console.log(delUp);
+        getDelete(id,delUp)
+    }
+
+    const handleUp = (id) => {
+        const updateValue = users.find(user => user.id === id)    
+        console.log(updateValue);
+        getUpdate(id,updateValue)
     }
 
 
@@ -193,7 +205,7 @@ function List() {
                                                 <button onClick={() => { handDel(user.id) }} className="btn btn-danger mt-2"><i className="bi bi-x-lg"></i></button>
                                             </div>
                                             <div style={{ marginLeft: "8px" }}>
-                                                <button onClick={() => { handDel(user.id) }} className="btn btn-warning mt-2"><i className="bi bi-person-gear"></i></button>
+                                                <button onClick={() => { handleUp(user.id) }} className="btn btn-warning mt-2"><i className="bi bi-person-gear"></i></button>
                                             </div>
 
                                         </div>
