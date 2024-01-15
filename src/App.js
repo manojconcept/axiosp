@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="useradd" element={<UserAdd/>}/>
+        <Route path="adduser" element={<UserAdd/>}/>
         <Route path="/admin" element={<List />} />
       </Routes>
     </UsersWrapperList>

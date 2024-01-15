@@ -1,6 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getData } from "./Api";
+import { GetData } from "./Api";
 import { adminData } from "./Db";
 export const userRecord = {
     name: "",
@@ -23,12 +23,12 @@ export const GobalContext = () => {
     return useContext(flowDat);
 }
 export const UsersWrapperList = ({ children }) => {
-
-    const [users, setUsers] = useState([]);
-    useEffect(() => { getData(setUsers) }, []);
-    const [isLog, setIslog] = useState(false);
+    const [users, setUsers] = useState([]); //api call
+    const [uAdd, setUadd] = useState(userRecord);//input recordes
+    const [isLog, setIslog] = useState(false); 
+    const [apiStatus,setApiStatus] = useState()
     const navigate = useNavigate()
-
+    useEffect(() => { GetData(setUsers) }, []);
     const handleLogin = (reDir) => {
         navigate(`/${reDir}`);
         setIslog(false);
@@ -39,7 +39,11 @@ export const UsersWrapperList = ({ children }) => {
         adminData,
         isLog,
         setIslog,
-        handleLogin
+        handleLogin,
+        setUadd,
+        uAdd,
+        apiStatus,
+        setApiStatus
     }
     return (
         <flowDat.Provider value={dataFall}>

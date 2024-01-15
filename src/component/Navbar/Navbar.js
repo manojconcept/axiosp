@@ -17,7 +17,7 @@ function Navbar() {
                 <div className="container">
                     <Link to={"/"} onClick={handleShow}  className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
                     {
-                        sessionFlag ? <Link to={"/admin"}  path className="navbar-brand mx-2">{`--Hello ${JSON.parse(sessionStorage.getItem("auth")).username}/admin--`}</Link> : ""
+                        sessionFlag ? <Link to={"/admin"}  path className="navbar-brand mx-2"><i className="bi bi-person-circle"></i> {`Hello, Admin ${JSON.parse(sessionStorage.getItem("auth")).username}`}</Link> : ""
 
                     }
 
