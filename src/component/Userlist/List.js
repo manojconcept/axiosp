@@ -14,7 +14,6 @@ function List() {
             );
         });
     }
-
     const handEdit = (id) => {
         setEditRow(id);
     };
@@ -35,7 +34,6 @@ function List() {
         <>
             <div className="container-fluid mt-2 mx-2">
                 <div className="card p-2">
-
                     <table className="table table-striped mt-2">
                         <thead>
                             <tr>
@@ -75,6 +73,7 @@ function List() {
                                                                 <div id="emailHelp" className="form-text">Suite</div>
                                                                 <input style={{ fontSize: "13px", height: "10px", margin: "2px" }} className="form-control p-2" type="text" id="adsuite" name="adsuite" onChange={(e) => { handleChange(e, user.id) }} value={user.adsuite} />
                                                             </div>
+                                                            
                                                             <hr />
                                                             <div className="d-flex justify-content-center align-items-center mb-2">
                                                                 <div id="emailHelp" className="form-text">City</div>
@@ -192,8 +191,6 @@ function List() {
                             })
                             }
                         </tbody>
-
-
                     </table>
                 </div>
             </div>

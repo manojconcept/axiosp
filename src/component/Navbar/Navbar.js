@@ -18,7 +18,7 @@ function Navbar() {
                 <div className="container">
                     <Link to={"/"} onClick={handleShow}  className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
                     {
-                        sessionFlag ? <Link to={"/admin"}  path className="navbar-brand mx-2"><i className="bi bi-person-circle"></i> {`Hello, Admin ${JSON.parse(sessionStorage.getItem("auth")).username}`}</Link> : ""
+                        sessionFlag ? <Link to={"/admin"}   className="navbar-brand mx-2"><i className="bi bi-person-circle"></i> {`Hello, Admin ${JSON.parse(sessionStorage.getItem("auth")).username}`}</Link> : ""
 
                     }
 
@@ -30,7 +30,7 @@ function Navbar() {
                         {
                             sessionFlag ? (
                                 <Fragment>
-                                <Link to={"/adduser"} data-toggle="tooltip" ata-toggle="tooltip" data-placement="bottom" title="add users" className="mx-2 btn btn-light my-2 my-sm-0"><i class="bi bi-file-earmark-plus-fill fs-5" ></i></Link>
+                                <Link to={"/adduser"} data-toggle="tooltip" ata-toggle="tooltip" data-placement="bottom" title="add users" className="mx-2 btn btn-light my-2 my-sm-0"><i className="bi bi-file-earmark-plus-fill fs-5" ></i></Link>
                                 <Link to={"/"} onClick={handleClear} className="mx-2 btn btn-danger my-2 my-sm-0">Log out</Link>
                                 </Fragment>
                                     

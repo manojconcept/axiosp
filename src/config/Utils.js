@@ -25,20 +25,16 @@ export const GobalContext = () => {
 export const UsersWrapperList = ({ children }) => {
     const [users, setUsers] = useState([]); //api call
     const [uAdd, setUadd] = useState(userRecord);//input recordes
-    const [isLog, setIslog] = useState(false); 
     const [apiStatus,setApiStatus] = useState()
     const navigate = useNavigate()
     useEffect(() => { GetData(setUsers) }, []);
     const handleLogin = (reDir) => {
         navigate(`/${reDir}`);
-        setIslog(false);
     }
     const dataFall = {
         users,
         setUsers,
         adminData,
-        isLog,
-        setIslog,
         handleLogin,
         setUadd,
         uAdd,

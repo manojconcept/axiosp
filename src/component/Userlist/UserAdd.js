@@ -12,13 +12,12 @@ const UserAdd = () => {
         }
     }
 
-
     const handleClick = () => {
         const userCheck = users.find((ele)=> ele.username === uAdd.username )
         userCheck !== undefined ? console.log("username already exists") :  GetPost(uAdd)
         
     }
-
+    
     return (
         <frameElement>
             <div className="container mt-2">
