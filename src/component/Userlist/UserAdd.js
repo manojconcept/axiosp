@@ -7,26 +7,17 @@ const UserAdd = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target
-        const upDateInput = e.target.value;
-        if (upDateInput.trim() !== 0) {
+        if (value.trim() !== 0) {
             setUadd({ ...uAdd, [name]: value })
         }
     }
 
 
     const handleClick = () => {
-
-        if (users.length !== 0) {
-            users.map((ele) => {
-                const flag = ele.username === uAdd.username;
-                console.log("flag",flag);
-                console.log("uAdd",uAdd);
-                console.log("Users",users);
-                return flag ?(console.log("already exist")) : ( GetPost(uAdd));
-            })
-        }
+        const userCheck = users.find((ele)=> ele.username === uAdd.username )
+        userCheck !== undefined ? console.log("username already exists") :  GetPost(uAdd)
+        
     }
-
 
     return (
         <frameElement>

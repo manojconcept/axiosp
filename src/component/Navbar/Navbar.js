@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { GobalContext } from "../../config/Utils";
 import { Link } from "react-router-dom";
 
@@ -22,12 +23,19 @@ function Navbar() {
                     }
 
                     <div className="d-flex">
-                    <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button> 
+                    {/* <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>  */}
                         {/* {
                             isLog ? <button onClick={() => handleLogin("signup")} className="btn btn-light my-2 my-sm-0" ><i className="bi bi-person-plus-fill"></i> Signup</button> : <button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button>
                         } */}
                         {
-                            sessionFlag ? <Link to={"/"} onClick={handleClear} className="mx-2 btn btn-danger my-2 my-sm-0">Log out</Link>:""
+                            sessionFlag ? (
+                                <Fragment>
+                                <Link to={"/adduser"} data-toggle="tooltip" ata-toggle="tooltip" data-placement="bottom" title="add users" className="mx-2 btn btn-light my-2 my-sm-0"><i class="bi bi-file-earmark-plus-fill fs-5" ></i></Link>
+                                <Link to={"/"} onClick={handleClear} className="mx-2 btn btn-danger my-2 my-sm-0">Log out</Link>
+                                </Fragment>
+                                    
+                            ):<button onClick={() => handleLogin("signin")} className="btn btn-light my-2 my-sm-0" > <i className="bi bi-person-fill-lock"></i> Login</button> 
+
                         }
                     </div>
                 </div>

@@ -3,11 +3,11 @@ import { GobalContext } from "../../config/Utils";
 import { GetUpdate, GetDelete } from "../../config/Api";
 import "./list.css";
 function List() {
-    const { users, setUsers, apiStatus, setApiStatus } = GobalContext()
+    const { users, setUsers } = GobalContext()
     const [editRow, setEditRow] = useState(0);
     const handleChange = (e, id) => {
         const { name, value } = e.target;
-        console.log(id);
+      
         setUsers((prevUsers) => {
             return prevUsers.map((user) =>
                 user.id === id ? { ...user, [name]: value } : user
@@ -20,21 +20,14 @@ function List() {
     };
 
     const handDel = (id) => {
-        console.log(id);
+       
         const delUp = users.find(user => user.id === id);
-        console.log(delUp);
         GetDelete(id, delUp)
     }
 
     const handleUp = (id) => {
         const updateValue = users.find(user => user.id === id)
-        console.log(updateValue);
         GetUpdate(id, updateValue)
-       
-        
-        if(apiStatus.status === 200){
-            window.location.reload(false);
-        }
     }
 
 
