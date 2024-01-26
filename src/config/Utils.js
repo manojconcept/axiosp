@@ -27,7 +27,9 @@ export const UsersWrapperList = ({ children }) => {
     const [uAdd, setUadd] = useState(userRecord);//input recordes
     const [apiStatus,setApiStatus] = useState()
     const navigate = useNavigate()
+    
     useEffect(() => { GetData(setUsers) }, []);
+
     const handleLogin = (reDir) => {
         navigate(`/${reDir}`);
     }
