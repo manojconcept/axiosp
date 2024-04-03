@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { GobalContext } from "../../config/Utils";
+
+import { GobalContext } from "../../context /ContextWarapper";
 import { GetUpdate, GetDelete } from "../../config/Api";
 import "./list.css";
+
 function List() {
     const { users, setUsers } = GobalContext()
     const [editRow, setEditRow] = useState(0);

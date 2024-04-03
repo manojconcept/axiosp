@@ -1,9 +1,10 @@
 import { Fragment } from "react";
-import { GobalContext } from "../../config/Utils";
 import { Link } from "react-router-dom";
 
+import { GobalContext } from "../../context /ContextWarapper";
+
 function Navbar() {
-    const { isLog, handleLogin, setIslog } = GobalContext();
+    const {  handleLogin, setIslog } = GobalContext();
     const handleClear = () => {
         sessionStorage.clear()
         setIslog(false);

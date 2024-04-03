@@ -1,9 +1,8 @@
-import { GobalContext } from "../../config/Utils";
+import { GobalContext } from "../../context /ContextWarapper";
 import MainCard from "./MainCard";
 
 function Main() {
     const { users } = GobalContext();
-    // console.log(process.env.REACT_APP_api);
     return (
         <section className="py-7">
             <div className="container px-4 px-lg-5 mt-5">

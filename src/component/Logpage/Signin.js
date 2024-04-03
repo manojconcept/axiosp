@@ -1,7 +1,8 @@
 import { useFormik } from "formik"
 import * as yup from "yup"
-import { GobalContext } from "../../config/Utils";
 import { useNavigate } from "react-router-dom"
+
+import { GobalContext } from "../../context /ContextWarapper"
 
 const signInSchema = yup.object({
     username:yup.string().max(12,"maxium letter is five char").required('fill the username'),

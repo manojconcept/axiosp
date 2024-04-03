@@ -1,7 +1,7 @@
 import { useContext, createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { GetData } from "./Api";
-import { adminData } from "./Db";
+import { GetData } from "../config/Api";
+import { adminData } from "../config/Db";
 export const userRecord = {
     name: "",
     username: "",
@@ -19,15 +19,13 @@ export const userRecord = {
     comBs: "",
 }
 const flowDat = createContext();
-export const GobalContext = () => {
-    return useContext(flowDat);
-}
-export const UsersWrapperList = ({ children }) => {
+
+const UsersWrapperList = ({ children }) => {
     const [users, setUsers] = useState([]); //api call
     const [uAdd, setUadd] = useState(userRecord);//input recordes
     const [apiStatus,setApiStatus] = useState()
     const navigate = useNavigate()
-    
+
     useEffect(() => { GetData(setUsers) }, []);
 
     const handleLogin = (reDir) => {
@@ -50,3 +48,9 @@ export const UsersWrapperList = ({ children }) => {
     )
 }
 
+const GobalContext = () => {
+    return useContext(flowDat);
+}
+
+export {GobalContext};
+export default UsersWrapperList;

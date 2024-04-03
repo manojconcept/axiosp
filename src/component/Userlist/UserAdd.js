@@ -1,5 +1,5 @@
-import { GobalContext } from "../../config/Utils"
 import { GetPost } from "../../config/Api"
+import { GobalContext } from "../../context /ContextWarapper"
 
 const UserAdd = () => {
     const { setUadd,

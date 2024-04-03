@@ -1,11 +1,7 @@
 import { useFormik } from "formik";
-import { useState } from "react";
 import * as yup from "yup"
-import { GobalContext } from "../../config/Utils";
 
 function Signup() {
-    const {setUsers} = GobalContext()
-
     const signUpSchema = yup.object({
         username: yup.string().min(5, "Need a longer username").required("Please Type the Username"),
         password: yup.string().min(5, "Type the range").required("Please type the password"),
@@ -30,8 +26,7 @@ function Signup() {
         }
     }
     const setInUsers = (data)=>{
-        console.log(data);
-
+        return data
     }
     const formik = useFormik(loginForm)
     return (
