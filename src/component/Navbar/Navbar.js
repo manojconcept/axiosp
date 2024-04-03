@@ -4,20 +4,18 @@ import { Link } from "react-router-dom";
 import { GobalContext } from "../../context /ContextWarapper";
 
 function Navbar() {
-    const {  handleLogin, setIslog } = GobalContext();
+    const {  handleLogin} = GobalContext();
+
     const handleClear = () => {
         sessionStorage.clear()
-        setIslog(false);
     }
-    const handleShow =()=>{
-        setIslog(true)
-    }
+    
     const sessionFlag = sessionStorage.getItem('auth') !== null ? true : false;
     return (
         <>
             <nav style={{ position: "sticky", top: "0", zIndex: "9000" }} className="navbar navbar-dark bg-dark  justify-content-between">
                 <div className="container">
-                    <Link to={"/"} onClick={handleShow}  className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
+                    <Link to={"/"}  className="navbar-brand"><i className="bi bi-database"></i>  User Database</Link>
                     {
                         sessionFlag ? <Link to={"/admin"}   className="navbar-brand mx-2"><i className="bi bi-person-circle"></i> {`Hello, Admin ${JSON.parse(sessionStorage.getItem("auth")).username}`}</Link> : ""
 

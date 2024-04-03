@@ -1,6 +1,5 @@
-import { useContext, createContext, useEffect, useState } from "react"
+import { useContext, createContext,useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { GetData } from "../config/Api";
 export const userRecord = {
     name: "",
     username: "",
@@ -31,7 +30,6 @@ const UsersWrapperList = ({ children }) => {
     const [apiStatus,setApiStatus] = useState()
     const navigate = useNavigate()
 
-    useEffect(() => { GetData(setUsers) }, []);
 
     const handleLogin = (reDir) => {
         navigate(`/${reDir}`);

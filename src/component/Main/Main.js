@@ -1,8 +1,13 @@
+
+import React,{useEffect} from "react";
 import { GobalContext } from "../../context /ContextWarapper";
 import MainCard from "./MainCard";
+import { GetData } from "../../config/Api";
 
 function Main() {
-    const { users } = GobalContext();
+    const { users,setUsers } = GobalContext();
+    useEffect(() => { GetData(setUsers) }, [setUsers]);
+
     return (
         <section className="py-7">
             <div className="container px-4 px-lg-5 mt-5">
